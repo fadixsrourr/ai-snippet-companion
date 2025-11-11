@@ -28,10 +28,8 @@ Live demo: -------
 
 Replace with your deployed URL (Vercel/Netlify/etc.).
 
-🖼️ Screenshots
-
-Drop images into docs/screenshots/ and update paths below.
-
+🖼️ Screenshots:
+Screenshots of Home, Snippets pages and a test for AI explanation.
 ![Home:](apps/web/public/screenshots/home.png)
 
 ![Snippets:](apps/web/public/screenshots/snippet.png)
