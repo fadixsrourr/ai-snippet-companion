@@ -32,14 +32,11 @@ Replace with your deployed URL (Vercel/Netlify/etc.).
 
 Drop images into docs/screenshots/ and update paths below.
 
-Home:
-(apps/web/public/screenshots/home.png)
+![Home:](apps/web/public/screenshots/home.png)
 
-Snippets:
-(apps/web/public/screenshots/snippet.png)
+![Snippets:](apps/web/public/screenshots/snippet.png)
 
-Explain (AI):
-(apps/web/public/screenshots/test.png)
+![Explain (AI):](apps/web/public/screenshots/test.png)
 
 
 	
