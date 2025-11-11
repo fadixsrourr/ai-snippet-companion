@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =============================================
+   BASE THEME — PURE DARK BACKGROUND WITH DOTS
+   ============================================= */
+:root { color-scheme: dark; }
+html, body, #root { height: 100%; }
+
+body {
+  @apply bg-neutral-950 text-neutral-100 antialiased;
+}
+
+/* =============================================
+   GLASS EFFECT (same as before)
+   ============================================= */
+@layer components {
+  .glass {
+    @apply rounded-xl border backdrop-blur shadow-soft bg-neutral-900/60 border-neutral-800;
+  }
+}
+
+/* =============================================
+   ANIMATED DOTS BACKDROP
+   ============================================= */
+@layer components {
+  .fx-dots {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    --dot-size-1: 18px;
+    --dot-size-2: 26px;
+    --dot-c1: rgba(255,255,255,0.08);
+    --dot-c2: rgba(255,255,255,0.05);
+  }
+
+  .fx-dots::before,
+  .fx-dots::after {
+    content: "";
+    position: absolute;
+    inset: -100px;
+    background-repeat: repeat;
+    will-change: background-position;
+    mask-image: radial-gradient(80% 80% at 50% 40%, #000 72%, transparent 100%);
+  }
+
+  .fx-dots::before {
+    background-image: radial-gradient(circle at 1px 1px, var(--dot-c1) 1px, transparent 1.5px);
+    background-size: var(--dot-size-1) var(--dot-size-1);
+    animation: dots-pan-1 42s linear infinite;
+  }
+
+  .fx-dots::after {
+    background-image: radial-gradient(circle at 1px 1px, var(--dot-c2) 1.2px, transparent 2px);
+    background-size: var(--dot-size-2) var(--dot-size-2);
+    animation: dots-pan-2 68s linear infinite;
+  }
+
+  @keyframes dots-pan-1 {
+    0% { background-position: 0px 0px; }
+    50% { background-position: 120px 80px; }
+    100% { background-position: 0px 0px; }
+  }
+
+  @keyframes dots-pan-2 {
+    0% { background-position: 0px 0px; }
+    50% { background-position: -150px 90px; }
+    100% { background-position: 0px 0px; }
+  }
+}
